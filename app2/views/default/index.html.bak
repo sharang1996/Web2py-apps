@@ -1,0 +1,24 @@
+{{extend 'layout.html'}}
+<h2>
+    Welcome To Sinnvoll Blogger
+</h2>
+<p>
+    <b>
+    here you have complete freedom to express your views,with no repercussions...
+    Happy Blogging!!!!
+    </b>
+</p>
+
+<h3>Previous Posts</h3>
+<table class="table">
+    <tr>
+        <td>title</td>
+        <td>time stamp</td>
+    </tr>
+    {{for row in rows:}}
+    <tr>
+        <td><a href="{{=URL('show',args=row.id)}}">{{=row.title}}</a></td>
+        <td>{{=row.created_on}}</td>
+    </tr>
+    {{pass}}
+</table>
